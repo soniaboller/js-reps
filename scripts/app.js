@@ -61,7 +61,41 @@ console.log(wordReverse(sentence));
 // ROUND FIVE
 
 function letterReverse(string) {
-    return string.split('').reverse().join();
+    return string.split('').reverse().join('');
 }
 console.log(letterReverse(sentence)); //how do you remove the commas?
 
+
+// ROUND SIX
+var wordLength = 0;
+var wordArray1 = ["oh", "good", "grief"];
+var wordArray2 = ["Nothing" , "takes", "the", "taste", "out", "of", "peanut", "butter", "quite", "like", "unrequited", "love"];
+function findLongestWord(wordArray){
+    for (var i = 0; i < wordArray.length; i++){
+        if(wordArray[i].length > wordLength) {
+            wordLength = wordArray[i].length;
+            var longestWord = wordArray[i];
+        }
+    }
+    console.log(longestWord);
+}
+findLongestWord(wordArray1);
+findLongestWord(wordArray2);
+
+
+// FINAL ROUND -- take string input and apply function, then add " proves that I am the rep MASTER!" on the end
+
+function repMaster(str, func){
+    if (func === wordReverse){
+        return wordReverse(str).concat("proves that I am the rep MASTER!").join(' ');
+    }
+    else if (func === letterReverse){
+        return letterReverse(str).concat("proves that I am the rep MASTER!").join(' ');
+    }
+    else {
+        console.log("pick a valid function");
+    }
+}
+console.log(repMaster("Never give your heart to a blockhead", wordReverse), 'this is repMaster with wordReverse');
+console.log(repMaster("I finished this practice", letterReverse), 'this is repMaster with letterReverse'); // this used to work but doesn't now?
+//also still have no idea how to make a function to
